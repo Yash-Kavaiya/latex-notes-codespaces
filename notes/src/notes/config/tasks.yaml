@@ -1,17 +1,294 @@
-research_task:
-  description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is {current_year}.
-  expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
-  agent: researcher
+# =============================================================================
+# GSET Question Bank Generator - Task Configuration
+# =============================================================================
+# This file defines 4 sequential tasks that transform question sheet images
+# into a professionally formatted LaTeX question bank book.
+# =============================================================================
 
-reporting_task:
+# -----------------------------------------------------------------------------
+# Task 1: OCR Extraction Task
+# -----------------------------------------------------------------------------
+# Input: Question sheet images from input/question_sheets/
+# Output: JSON file with extracted questions saved to output/extracted_questions/
+# -----------------------------------------------------------------------------
+ocr_extraction_task:
   description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    Perform OCR on the question sheet image located at: {image_path}
+    
+    **Critical Requirements:**
+    1. Extract ALL questions visible in the image
+    2. For each question, extract:
+       - Question number
+       - Question text (preserve exact wording)
+       - All options (A, B, C, D or 1, 2, 3, 4)
+       - Any diagrams/figures (describe them textually)
+       - Mathematical expressions (convert to LaTeX notation)
+    
+    3. **Quality Standards:**
+       - NO hallucinations - only extract what is actually present
+       - Flag unclear or illegible sections with [UNCLEAR: description]
+       - Preserve original numbering scheme
+       - Handle multi-column layouts correctly
+       - Process mathematical symbols accurately
+    
+    4. **Output Format:**
+       Save as JSON with structure:
+       {{
+         "source_image": "{image_path}",
+         "extraction_timestamp": "ISO timestamp",
+         "total_questions": count,
+         "questions": [
+           {{
+             "question_number": "1",
+             "question_text": "...",
+             "options": {{
+               "A": "...",
+               "B": "...",
+               "C": "...",
+               "D": "..."
+             }},
+             "has_figure": true/false,
+             "figure_description": "...",
+             "extraction_confidence": "high/medium/low"
+           }}
+         ],
+         "extraction_notes": "Any issues or observations"
+       }}
+    
+    5. Save the output to: output/extracted_questions/{filename}_questions.json
   expected_output: >
-    A fully fledged report with the main topics, each with a full section of information.
-    Formatted as markdown without '```'
-  agent: reporting_analyst
+    A well-structured JSON file containing all extracted questions with:
+    - Accurate question text without any hallucinations
+    - All options properly labeled
+    - Mathematical expressions in LaTeX format
+    - Confidence indicators for each extraction
+    - Saved to the specified output path
+  agent: ocr_specialist
+  output_file: 'output/extracted_questions/{filename}_questions.json'
+
+# -----------------------------------------------------------------------------
+# Task 2: Answer Matching Task
+# -----------------------------------------------------------------------------
+# Input: Extracted questions JSON + Answer key files from input/answer_keys/
+# Output: Matched Q&A with explanations
+# -----------------------------------------------------------------------------
+answer_matching_task:
+  description: >
+    Match the extracted questions with correct answers from the answer key.
+    
+    **Input Files:**
+    - Questions: output/extracted_questions/{filename}_questions.json
+    - Answer Key: input/answer_keys/{answer_key_file}
+    
+    **Process:**
+    1. Parse the extracted questions JSON
+    2. Load and parse the answer key file
+    3. For EACH question:
+       a. Find the corresponding correct answer from the answer key
+       b. Verify the answer makes logical sense
+       c. Generate a comprehensive explanation including:
+          - Why the correct answer is right
+          - Why other options are incorrect (brief)
+          - Key concept being tested
+          - Related topics for further study
+    
+    **Explanation Guidelines:**
+    - Keep explanations educational and clear
+    - Use simple language accessible to exam aspirants
+    - Include relevant formulas/rules where applicable
+    - Provide memory aids or shortcuts where helpful
+    - Target length: 50-150 words per explanation
+    
+    **Output Format:**
+    {{
+      "chapter_name": "{chapter_name}",
+      "subject": "{subject}",
+      "total_questions": count,
+      "questions": [
+        {{
+          "question_number": "1",
+          "question_text": "...",
+          "options": {{...}},
+          "correct_answer": "B",
+          "explanation": "Detailed explanation here...",
+          "difficulty": "easy/medium/hard",
+          "topic": "topic name",
+          "key_concept": "Main concept being tested"
+        }}
+      ]
+    }}
+  expected_output: >
+    A comprehensive JSON structure containing:
+    - All questions with matched correct answers
+    - Educational explanations for each answer
+    - Topic and difficulty classifications
+    - Ready for conversion to markdown format
+  agent: answer_analyst
+  context:
+    - ocr_extraction_task
+
+# -----------------------------------------------------------------------------
+# Task 3: Markdown Generation Task
+# -----------------------------------------------------------------------------
+# Input: Matched Q&A JSON from previous task
+# Output: Formatted markdown chapter file
+# -----------------------------------------------------------------------------
+markdown_generation_task:
+  description: >
+    Convert the matched Q&A data into a beautifully formatted markdown file.
+    
+    **Markdown Structure:**
+    ```markdown
+    # Chapter {chapter_number}: {chapter_name}
+    
+    > **Subject:** {subject}  
+    > **Total Questions:** {count}  
+    > **Difficulty Distribution:** Easy: X | Medium: Y | Hard: Z
+    
+    ---
+    
+    ## Question 1
+    
+    **Question:** [Full question text here]
+    
+    **Options:**
+    - (A) Option text
+    - (B) Option text  
+    - (C) Option text
+    - (D) Option text
+    
+    **Correct Answer:** (B)
+    
+    **Explanation:**  
+    [Comprehensive explanation here]
+    
+    **Key Concept:** [Main concept being tested]
+    
+    ---
+    
+    ## Question 2
+    [Continue pattern...]
+    ```
+    
+    **Formatting Requirements:**
+    1. Mathematical expressions must use proper LaTeX delimiters:
+       - Inline: $expression$
+       - Display: $$expression$$
+    2. Tables must be properly aligned
+    3. Code blocks for any programming questions
+    4. Consistent heading hierarchy
+    5. Proper horizontal rules between questions
+    6. Special characters must be escaped properly
+    
+    **Chapter Metadata Header:**
+    Include YAML front matter:
+    ```yaml
+    ---
+    chapter: {chapter_number}
+    title: {chapter_name}
+    subject: {subject}
+    question_count: {count}
+    author: Yash Kavaiya
+    ---
+    ```
+    
+    Save the output to: output/chapters/chapter_{chapter_number}_{subject}.md
+  expected_output: >
+    A professionally formatted markdown file containing:
+    - YAML front matter with chapter metadata
+    - All questions with consistent formatting
+    - Proper LaTeX math notation
+    - Clear visual hierarchy
+    - Ready for LaTeX book compilation
+  agent: content_formatter
+  context:
+    - answer_matching_task
+  output_file: 'output/chapters/chapter_{chapter_number}_{subject}.md'
+
+# -----------------------------------------------------------------------------
+# Task 4: LaTeX Book Compilation Task
+# -----------------------------------------------------------------------------
+# Input: All markdown chapter files + book template
+# Output: Complete LaTeX book ready for PDF generation
+# -----------------------------------------------------------------------------
+latex_book_compilation_task:
+  description: >
+    Compile all markdown chapters into a professional LaTeX question bank book.
+    
+    **Book Specifications:**
+    
+    1. **Cover Page:**
+       - Title: "GSET Exam Question Bank"
+       - Subtitle: "{exam_name} - Comprehensive Practice Guide"
+       - Author: Yash Kavaiya
+       - GSET Logo/Theme styling
+    
+    2. **Copyright & Info Page:**
+       - Author: Yash Kavaiya
+       - Website: https://gsetexam.blogspot.com/
+       - YouTube: https://youtube.com/playlist?list=PL6gpvClXEwJXRbutffBm0bjAwKfoaNlMw
+       - Telegram: t.me/gset_exam
+       - Facebook: https://www.facebook.com/GSETEXAM/
+       - Generation Date: {current_date}
+    
+    3. **Table of Contents:**
+       - Auto-generated from chapters
+       - Clickable links (for PDF version)
+    
+    4. **Page Headers/Footers:**
+       - Header: Chapter name | Page number
+       - Footer: https://gsetexam.blogspot.com/ | Yash Kavaiya
+    
+    5. **Chapter Format:**
+       - Each chapter starts on a new page
+       - Chapter title page with subject and question count
+       - Consistent question formatting throughout
+       - Page breaks to avoid splitting questions
+    
+    6. **GSET Theme Colors:**
+       - Primary: #1a5276 (Dark Blue)
+       - Secondary: #2e86ab (Light Blue)
+       - Accent: #f39c12 (Orange)
+       - Text: #2c3e50 (Dark Gray)
+    
+    7. **Typography:**
+       - Main text: 11pt, clear serif font
+       - Questions: Bold numbering
+       - Options: Indented with clear markers
+       - Explanations: Slightly smaller, different style
+    
+    8. **Mathematical Content:**
+       - All equations properly typeset
+       - Equation numbering where appropriate
+       - Consistent notation throughout
+    
+    9. **Social Links Section (Every Chapter End):**
+       ```latex
+       \begin{{center}}
+       \textbf{{Connect with GSET Exam}}\\
+       \faYoutube\ YouTube: [playlist link]\\
+       \faTelegram\ Telegram: t.me/gset\_exam\\
+       \faGlobe\ Website: gsetexam.blogspot.com\\
+       \faFacebook\ Facebook: GSETEXAM
+       \end{{center}}
+       ```
+    
+    10. **Output Files:**
+        - main.tex (master file)
+        - chapters/*.tex (individual chapter files)
+        - gset_style.sty (custom style package)
+        - Compiled PDF: GSET_Question_Bank_{subject}_{date}.pdf
+    
+    Save all LaTeX files to: output/book/
+  expected_output: >
+    A complete LaTeX book package containing:
+    - Master main.tex file with proper document structure
+    - Individual chapter .tex files converted from markdown
+    - Custom GSET style package with theme colors and formatting
+    - All social media links properly integrated
+    - Ready for pdflatex compilation
+    - Consistent formatting and alignment throughout
+  agent: latex_book_creator
+  context:
+    - markdown_generation_task
+  output_file: 'output/book/main.tex'
