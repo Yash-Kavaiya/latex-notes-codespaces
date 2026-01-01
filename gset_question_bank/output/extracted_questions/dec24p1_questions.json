@@ -1,0 +1,535 @@
+{
+  "source_image": "input/question_sheets/dec24p1.pdf",
+  "extraction_timestamp": "2024-12-24T12:00:00.000Z",
+  "total_questions": 50,
+  "questions": [
+    {
+      "question_number": "1",
+      "question_text": "Semantic barrier in communication is",
+      "options": {
+        "A": "Use of technical/difficult language",
+        "B": "Use of technology",
+        "C": "Lack of attention",
+        "D": "Lack of co-ordination"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "2",
+      "question_text": "The key purpose of effective communication is",
+      "options": {
+        "A": "Create barriers",
+        "B": "Promote misunderstanding",
+        "C": "Effect change",
+        "D": "Confuse audience"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "3",
+      "question_text": "Identify the correct sequence of the elements in the communication system.",
+      "options": {
+        "A": "b, a, c, d",
+        "B": "a, b, d, c",
+        "C": "b, a, d, c",
+        "D": "c, d, b, a"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "4",
+      "question_text": "Which of the following is an example of non-verbal communication?",
+      "options": {
+        "A": "Writing on the blackboard",
+        "B": "Speaking on microphone",
+        "C": "Sending a voice message",
+        "D": "Nodding head to indicate disagreement"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "5",
+      "question_text": "'Encoding' in the communication system means",
+      "options": {
+        "A": "Converting thoughts or ideas into a message",
+        "B": "Translating messages into ideas or thoughts",
+        "C": "Providing opinions on the sender",
+        "D": "Avoiding difficult words in the message"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "6",
+      "question_text": "Which one among the following is the common language for AI ?",
+      "options": {
+        "A": "Lisp",
+        "B": "Python",
+        "C": "PHP",
+        "D": "JAVA"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "7",
+      "question_text": "Regarding ICT based governance, which of the following statements is/are correct?",
+      "options": {
+        "A": "i, ii and iii",
+        "B": "i and ii only",
+        "C": "i and iii only",
+        "D": "ii and iii only"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "8",
+      "question_text": "Which among the following are the National Co-ordinators for SWAYAM?",
+      "options": {
+        "A": "1, 2, 3 and 4",
+        "B": "2, 3, 4 and 5",
+        "C": "1, 2, 3 and 5",
+        "D": "2, 3 and 4"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "9",
+      "question_text": "Given below are two statements :",
+      "options": {
+        "A": "Both statement I and statement II are true",
+        "B": "Both statement I and statement II are false",
+        "C": "Statement I is true but statement II is false",
+        "D": "Statement I is false but statement II is true"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "10",
+      "question_text": "Given below are two statements, one is labeled as Assertion (A) and the other is labeled as Reason (R).",
+      "options": {
+        "A": "Both (A) and (R) are true and (R) is the correct explanation of (A)"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "11",
+      "question_text": "Which of the following components fall under presage stage of presage processor-product model of teaching- learning process ?",
+      "options": {
+        "A": "1, 4, 6"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "12",
+      "question_text": "Discussion method of teaching does NOT have the advantage of developing",
+      "options": {
+        "A": "Understanding and experiencing"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "13",
+      "question_text": "A teacher through experience found that learners were able to memorise and recall content, if given in brief summarised form. Of the given below which one is NOT the implication ?",
+      "options": {
+        "A": "Brief summarisation will motivate learner for active participation"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "14",
+      "question_text": "The online teaching has advantage with reference to",
+      "options": {
+        "A": "use of multimedia system"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "15",
+      "question_text": "Which of the following learner characteristics disturb classroom teaching?",
+      "options": {
+        "A": "1, 2, 5"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "16",
+      "question_text": "In the following series of numbers, one number is wrong in the series :",
+      "options": {
+        "A": "40"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "17",
+      "question_text": "The difference between compound and simple interest on a certain sum of money at the interest rate of 10% per annum for 1.5 years is ₹ 183, when the interest is compounded semi annually. What is the sum of money?",
+      "options": {
+        "A": "₹ 19,200"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "18",
+      "question_text": "The following table gives the percentage distribution of population of five States A, B, C, D and E on the basis of poverty line and also on the basis of gender :",
+      "options": {
+        "A": "1, 2, 3 and 5"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "19",
+      "question_text": "The online teaching has advantage with reference to",
+      "options": {
+        "A": "use of multimedia system"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "20",
+      "question_text": "Which of the following learner characteristics disturb classroom teaching?",
+      "options": {
+        "A": "1, 2, 5"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "21",
+      "question_text": "Which agency in India conducts NEET Examination for admission into medical colleges ?",
+      "options": {
+        "A": "National Testing Agency"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "22",
+      "question_text": "ICSSR' stands for",
+      "options": {
+        "A": "International Council for Social Science Research"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "23",
+      "question_text": "Which Institution is scored rank one (1), according to India Overall Rankings - 2024 of NIRF, Govt. of India ?",
+      "options": {
+        "A": "IISC, Bangalore"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "24",
+      "question_text": "'NIRF' stands for",
+      "options": {
+        "A": "National Industrial Ranking Framework"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "25",
+      "question_text": "Name of the centres established to develop competencies among faculty members in Higher Education for better teaching, learning, research and academic leadership for effective implementation of NEP - 2020",
+      "options": {
+        "A": "Malaviya Mission Teacher Training Centres"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "26",
+      "question_text": "Which of the following is NOT a characteristic of basic research?",
+      "options": {
+        "A": "Knowledge findings are replicable"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "27",
+      "question_text": "Which one of the following is NOT a tool for quantitative data analysis in educational research?",
+      "options": {
+        "A": "MS Word"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "28",
+      "question_text": "A researcher intends to explore the results of possible factors for the organisation of 'Girl student support system development in the college campus'. Which research method will be most appropriate for the study?",
+      "options": {
+        "A": "Descriptive survey method"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "29",
+      "question_text": "What percentage of observation are broadly covered in ± 2 standard deviation (2σ) of a normal probability distribution ?",
+      "options": {
+        "A": "60%"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "30",
+      "question_text": "Which one of the following is called non-probabilistic sampling?",
+      "options": {
+        "A": "Quota sampling"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "31",
+      "question_text": "Given: U = -2, V = 1/2, W = 3, X = -4, Y = 9 and Z = 1/6. What is the value of √(((W-2)^2)/V) + ((Y-5)^2)/Z) + U-X?",
+      "options": {
+        "A": "8"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "32",
+      "question_text": "If the compound interest on a certain sum at 16 2/3 % for 3 years is ₹ 1,270, what is the simple interest on the same sum at the same rate and for the same period ?",
+      "options": {
+        "A": "₹ 1,080"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "33",
+      "question_text": "Complete the letter series :",
+      "options": {
+        "A": "aabba"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "34",
+      "question_text": "The average of three numbers is given as 44. If the second number is twice the first and is also thrice the third, what is the largest number ?",
+      "options": {
+        "A": "72"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "35",
+      "question_text": "10% of the inhabitants of a village having died of cholera, during which 20% remaining inhabitants left the village. The population is then reduced to 5040. What is the original inhabitants ?",
+      "options": {
+        "A": "6000"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "36",
+      "question_text": "Match the following and choose the correct option from given below :",
+      "options": {
+        "A": "c a d b"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "37",
+      "question_text": "Given below are two statements :",
+      "options": {
+        "A": "Both statement I and statement II are true"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "38",
+      "question_text": "Which of the following are effect of global warming?",
+      "options": {
+        "A": "1, 2 and 3"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "39",
+      "question_text": "Which of the following cyclone has affected the West Coast of India in last few years ?",
+      "options": {
+        "A": "1, 2 and 3"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "40",
+      "question_text": "The soil pollutant among the following are:",
+      "options": {
+        "A": "1, 2, 3 and 5"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "41",
+      "question_text": "Which fundamental right is guaranteed by the Constitution of India as mentioned in the paragraph ?",
+      "options": {
+        "A": "The right to vote"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "42",
+      "question_text": "According to the paragraph, why is it important for every individual to acquire knowledge, skills and aptitudes ?",
+      "options": {
+        "A": "To become successful in life"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "43",
+      "question_text": "What did James Madison say about popular government ?",
+      "options": {
+        "A": "It cannot function without wealth"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "44",
+      "question_text": "What does 'training for democracy' postulate according to the paragraph ?",
+      "options": {
+        "A": "Training focused purely on intellectual development"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "45",
+      "question_text": "Why does the author believe that educational policies should be established as an all-India basis ?",
+      "options": {
+        "A": "To promote political unity in India"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "46",
+      "question_text": "'X' is East of 'Y' which is in the North of 'Z'. If 'P' is to the East of 'Z', then in which direction of X' is 'P'?",
+      "options": {
+        "A": "South-West"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "47",
+      "question_text": "Match the following four terms of Column - A with that of Column – B, correctly as per Pramana's reasoning.",
+      "options": {
+        "A": "1-d, 2- a, 3 – b, 4-с"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "48",
+      "question_text": "The ratio of the number of students studying in schools A, B and C is 6:8:7 respectively. If the number of students studying in each of the schools is increased by 20%, 15% and 20% respectively, what will be the new ratio of the number of students in schools A, B and C ?",
+      "options": {
+        "A": "20:19:18"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "49",
+      "question_text": "The average of 1^2, 2^2, 3^2, 4^2, 5^2, 6^2 is",
+      "options": {
+        "A": "14.69"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    },
+    {
+      "question_number": "50",
+      "question_text": "The bacterial count in a certain culture (colony) increased from 1000 to 4000 in 3 days. What was the average percentage increase per day?",
+      "options": {
+        "A": "49.2%"
+      },
+      "has_figure": false,
+      "figure_description": "",
+      "extraction_confidence": "high"
+    }
+  ],
+  "extraction_notes": "Any issues or observations"
+}

@@ -22,7 +22,7 @@ import glob
 from datetime import datetime
 from pathlib import Path
 
-from gset_question_bank.crew import GsetQuestionBank, GsetQuestionBankHierarchical
+from notes.crew import GsetQuestionBank, GsetQuestionBankHierarchical
 
 # Suppress unnecessary warnings
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
@@ -53,13 +53,13 @@ def run():
     Usage:
         crewai run
         or
-        python -m gset_question_bank.main
+        python -m notes.main
     """
     inputs = {
-        'image_path': 'input/question_sheets/sample_question_paper.png',
+        'image_path': 'input/question_sheets/dec24p1.pdf',
         'answer_key_file': 'input/answer_keys/sample_answer_key.txt',
         'chapter_number': 1,
-        'chapter_name': 'Sample Chapter',
+        'chapter_name': 'December 2024 Paper 1',
         'subject': 'General Studies',
         'exam_name': DEFAULT_CONFIG['exam_name'],
         'current_date': datetime.now().strftime('%Y-%m-%d'),
@@ -98,7 +98,7 @@ def run_single(
         Crew execution result
     
     Usage:
-        from gset_question_bank.main import run_single
+        from notes.main import run_single
         run_single('path/to/image.png', 'path/to/answers.txt', 1, 'Chapter 1', 'Math')
     """
     inputs = {
@@ -274,7 +274,7 @@ def compile_book():
     }
     
     # Run only the LaTeX compilation task
-    from gset_question_bank.crew import GsetQuestionBank
+    from notes.crew import GsetQuestionBank
     
     crew = GsetQuestionBank()
     latex_agent = crew.latex_book_creator()

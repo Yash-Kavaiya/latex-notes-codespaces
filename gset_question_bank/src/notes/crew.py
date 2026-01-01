@@ -16,14 +16,15 @@ Website: https://gsetexam.blogspot.com/
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task, before_kickoff, after_kickoff
 from crewai.agents.agent_builder.base_agent import BaseAgent
-from crewai_tools import FileReadTool, DirectoryReadTool, FileWriterTool
+from crewai_tools import FileReadTool, DirectoryReadTool
 from typing import List, Optional
 import os
 from datetime import datetime
 
 # Import custom tools
-from gset_question_bank.tools.ocr_tool import OCRTool
-from gset_question_bank.tools.latex_tool import LaTeXCompilerTool, MarkdownToLaTeXTool
+from notes.tools.ocr_tool import OCRTool
+from notes.tools.latex_tool import LaTeXCompilerTool, MarkdownToLaTeXTool
+from notes.tools.file_tool import FileWriterTool
 
 
 @CrewBase
@@ -147,6 +148,7 @@ class GsetQuestionBank():
     def _get_analyst_tools(self) -> List:
         """Get tools for answer analyst agent."""
         return [
+            OCRTool(),  # For extracting text from PDF answer keys
             FileReadTool(),
             DirectoryReadTool(directory='input/answer_keys'),
             FileWriterTool(),
@@ -303,15 +305,9 @@ class GsetQuestionBank():
             tasks=self.tasks,
             process=Process.sequential,
             verbose=True,
-            memory=True,
-            embedder={
-                "provider": "openai",
-                "config": {
-                    "model": "text-embedding-3-small"
-                }
-            },
-            # Planning enabled for complex task coordination
-            planning=True,
+            memory=False,  # Disabled - requires ChromaDB and OpenAI embeddings
+            # Planning disabled - requires OpenAI by default
+            planning=False,
             # Full output for detailed results
             full_output=True,
         )

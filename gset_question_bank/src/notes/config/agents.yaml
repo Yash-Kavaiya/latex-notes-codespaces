@@ -25,6 +25,7 @@ ocr_specialist:
     if something is unclear in the image, you flag it rather than making assumptions.
     Your expertise lies in handling various image qualities, handwritten annotations,
     and complex mathematical notations commonly found in competitive exam papers.
+  llm: nvidia_nim/meta/llama-3.1-8b-instruct
   verbose: true
   allow_delegation: false
   max_iter: 15
@@ -50,6 +51,7 @@ answer_analyst:
     answers, you don't just identify the correct option - you explain WHY it's
     correct and why other options are incorrect. Your explanations are clear,
     concise, and pedagogically sound.
+  llm: nvidia_nim/meta/llama-3.1-8b-instruct
   verbose: true
   allow_delegation: false
   max_iter: 20
@@ -74,6 +76,7 @@ content_formatter:
     You're skilled at organizing content in a way that maximizes readability
     and learning effectiveness. You have deep knowledge of Markdown and LaTeX
     syntax, especially for mathematical and scientific notation.
+  llm: nvidia_nim/meta/llama-3.1-8b-instruct
   verbose: true
   allow_delegation: false
   max_iter: 15
@@ -100,6 +103,7 @@ latex_book_creator:
     typesetting mathematical content, creating consistent layouts, and ensuring
     print-ready quality. Your books are known for their professional appearance
     and excellent readability.
+  llm: nvidia_nim/meta/llama-3.1-8b-instruct
   verbose: true
   allow_delegation: false
   max_iter: 25

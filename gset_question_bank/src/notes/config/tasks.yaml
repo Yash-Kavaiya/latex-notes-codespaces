@@ -36,7 +36,7 @@ ocr_extraction_task:
        {{
          "source_image": "{image_path}",
          "extraction_timestamp": "ISO timestamp",
-         "total_questions": count,
+         "total_questions": "<number of questions extracted>",
          "questions": [
            {{
              "question_number": "1",
@@ -103,7 +103,7 @@ answer_matching_task:
     {{
       "chapter_name": "{chapter_name}",
       "subject": "{subject}",
-      "total_questions": count,
+      "total_questions": "<number of questions>",
       "questions": [
         {{
           "question_number": "1",
@@ -142,7 +142,7 @@ markdown_generation_task:
     # Chapter {chapter_number}: {chapter_name}
     
     > **Subject:** {subject}  
-    > **Total Questions:** {count}  
+    > **Total Questions:** <calculated from questions>  
     > **Difficulty Distribution:** Easy: X | Medium: Y | Hard: Z
     
     ---
@@ -187,7 +187,7 @@ markdown_generation_task:
     chapter: {chapter_number}
     title: {chapter_name}
     subject: {subject}
-    question_count: {count}
+    question_count: <calculated from questions>
     author: Yash Kavaiya
     ---
     ```
@@ -263,21 +263,18 @@ latex_book_compilation_task:
        - Consistent notation throughout
     
     9. **Social Links Section (Every Chapter End):**
-       ```latex
-       \begin{{center}}
-       \textbf{{Connect with GSET Exam}}\\
-       \faYoutube\ YouTube: [playlist link]\\
-       \faTelegram\ Telegram: t.me/gset\_exam\\
-       \faGlobe\ Website: gsetexam.blogspot.com\\
-       \faFacebook\ Facebook: GSETEXAM
-       \end{{center}}
-       ```
+       Create a centered section with bold "Connect with GSET Exam" title followed by:
+       - YouTube playlist link
+       - Telegram: t.me/gset_exam
+       - Website: gsetexam.blogspot.com
+       - Facebook: GSETEXAM
+       Use FontAwesome icons for each platform.
     
     10. **Output Files:**
         - main.tex (master file)
         - chapters/*.tex (individual chapter files)
         - gset_style.sty (custom style package)
-        - Compiled PDF: GSET_Question_Bank_{subject}_{date}.pdf
+        - Compiled PDF: GSET_Question_Bank_{subject}_current_date.pdf
     
     Save all LaTeX files to: output/book/
   expected_output: >
